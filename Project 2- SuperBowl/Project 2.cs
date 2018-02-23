@@ -170,8 +170,34 @@ namespace Project_2__SuperBowl
             Console.ReadLine();
             Console.Clear();
 
+            string[,] StateStats = SuperBowlStates(SuperBowlObjects);
+
+            for (int z= 0; z < 15; z++)
+            {
+                Console.WriteLine("1.{0}", StateStats[z, 0]);
+                Console.WriteLine("2.{0}", StateStats[z,1]);
+                Console.WriteLine("3.{0}", StateStats[z, 2]);
+                Console.WriteLine();
+            }
+            Console.WriteLine("Press enter to clear...");
+            Console.ReadLine();
+            Console.Clear();
+
+            string[,] MVPData = SuperBowlMVP(SuperBowlObjects);
+            for (int z = 0; z < 11; z++)
+            {
+                Console.WriteLine("1.{0}", MVPData[z, 0]);
+                Console.WriteLine("2.{0}", MVPData[z, 1]);
+                Console.WriteLine("3.{0}", MVPData[z, 2]);
+                Console.WriteLine();
+            }
+
+            Console.WriteLine("Press enter to clear...");
+            Console.ReadLine();
+            Console.Clear();
+
             //Console.WriteLine(SuperBowlObjects[1].SB);
-            
+
 
 
         }// End of Main Method
@@ -260,5 +286,92 @@ namespace Project_2__SuperBowl
             }
             return AttendanceStats;
         }//End of SuperBowlAttendance Method
+
+        static string[,] SuperBowlStates(SuperBowl[] SuperBowlObjects)
+        {
+            string[,] StateStats = new string[15, 3];
+            IEnumerable<SuperBowl> SuperBowlQuery =
+                from superBowls in SuperBowlObjects
+                where superBowls.State == "Florida"
+                orderby superBowls.State ascending
+                select superBowls;
+            int x = 0;
+            foreach (SuperBowl superBowls in SuperBowlQuery)
+            {
+                StateStats[x, 0] = superBowls.City;
+                StateStats[x, 1] = superBowls.State;
+                StateStats[x, 2] = superBowls.Stadium;
+                x++;
+            }
+            return StateStats;
+        }//End of SuperBowlStates Method
+
+        static string[,] SuperBowlMVP(SuperBowl[] SuperBowlObjects)
+        {
+            string[,] MVPData = new string[11,3];
+            IEnumerable<SuperBowl> SuperBowlQuery =
+                from superBowls in SuperBowlObjects
+                orderby superBowls.MVP ascending
+                select superBowls;
+            string[] MVPs = { };
+            string[] temp = { };
+            int x = 0;
+
+            foreach( SuperBowl superBowls in SuperBowlQuery)
+            {
+                
+                if ( superBowls.MVP == "Eli Manning")
+                {
+                    MVPData[x, 0] = superBowls.MVP;
+                    MVPData[x, 1] = superBowls.WinningTeam;
+                    MVPData[x, 2] = superBowls.LosingTeam;
+                    x++;
+                    
+                }
+                if (superBowls.MVP == "Joe Montana")
+                {
+                    MVPData[x, 0] = superBowls.MVP;
+                    MVPData[x, 1] = superBowls.WinningTeam;
+                    MVPData[x, 2] = superBowls.LosingTeam;
+                    x++;
+                }
+                if (superBowls.MVP == "Terry Bradshaw")
+                {
+                    MVPData[x, 0] = superBowls.MVP;
+                    MVPData[x, 1] = superBowls.WinningTeam;
+                    MVPData[x, 2] = superBowls.LosingTeam;
+                    x++;
+                }
+                if (superBowls.MVP == "Tom Brady")
+                {
+                    MVPData[x, 0] = superBowls.MVP;
+                    MVPData[x, 1] = superBowls.WinningTeam;
+                    MVPData[x, 2] = superBowls.LosingTeam;
+                    x++;
+                }
+                else
+                {
+
+                }
+                
+            }return MVPData;
+            //End of SuperBowl MVP Method
+
+            
+            
+            
+            
+                
+                
+             
+                
+
+                
+            
+            
+
+              
+        }
+
     }
 }
