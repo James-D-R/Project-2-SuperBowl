@@ -149,9 +149,29 @@ namespace Project_2__SuperBowl
                 Console.WriteLine();
 
             }
-            
+            Console.WriteLine("Press enter to clear...");
+            Console.ReadLine();
+            Console.Clear();
+
+            string[,] AttendanceStats = SuperBowlAttendance(SuperBowlObjects);
+
+            for (var y = 0; y < 5; y++)
+            {
+                Console.WriteLine("1.{0}", AttendanceStats[y, 0]);
+                Console.WriteLine("2.{0}", AttendanceStats[y, 1]);
+                Console.WriteLine("3.{0}", AttendanceStats[y, 2]);
+                Console.WriteLine("4.{0}", AttendanceStats[y, 3]);
+                Console.WriteLine("5.{0}", AttendanceStats[y, 4]);
+                Console.WriteLine("6.{0}", AttendanceStats[y, 5]);
+                Console.WriteLine("7.{0}", AttendanceStats[y, 6]);
+                Console.WriteLine();
+            }
+            Console.WriteLine("Press enter to clear...");
+            Console.ReadLine();
+            Console.Clear();
+
             //Console.WriteLine(SuperBowlObjects[1].SB);
-            Console.ReadKey();
+            
 
 
         }// End of Main Method
@@ -205,5 +225,40 @@ namespace Project_2__SuperBowl
             }
             return WinningStats;
         }// End of SuperBowlWinners Method
+
+        static string[,] SuperBowlAttendance(SuperBowl[] SuperBowlObjects)
+        {
+            string[,] AttendanceStats = new string[5, 7];
+
+            IEnumerable<SuperBowl> SuperBowlQuery =
+                from superBowls in SuperBowlObjects
+                where superBowls.Attendance > 100000
+                orderby superBowls.Attendance descending
+                select superBowls;
+
+            int x = 0;
+            foreach (SuperBowl superBowls in SuperBowlQuery)
+            {
+                string num = superBowls.Attendance.ToString();
+                AttendanceStats[x, 0] = num;
+
+                string year = superBowls.Date;
+                int yearLength = year.Length;
+                int last = yearLength - 1;
+                int first = yearLength - 2;
+                string firstStr = year[first].ToString();
+                string lastStr = year[last].ToString();
+                string yearAbrv = "'" + firstStr + lastStr;
+
+                AttendanceStats[x, 1] = yearAbrv;
+                AttendanceStats[x, 2] = superBowls.WinningTeam;
+                AttendanceStats[x, 3] = superBowls.LosingTeam;
+                AttendanceStats[x, 4] = superBowls.City;
+                AttendanceStats[x, 5] = superBowls.State;
+                AttendanceStats[x, 6] = superBowls.Stadium;
+                x++;
+            }
+            return AttendanceStats;
+        }//End of SuperBowlAttendance Method
     }
 }
