@@ -196,7 +196,38 @@ namespace Project_2__SuperBowl
             Console.ReadLine();
             Console.Clear();
 
-            //Console.WriteLine(SuperBowlObjects[1].SB);
+            string[] LosingestCoachList = MostLossCoach(SuperBowlObjects);
+            string WinningestCoach = MostWinsCoach(SuperBowlObjects);
+            string TeamWinStats = TeamMostWins(SuperBowlObjects);
+            string LoseTeamStats = TeamMostLoss(SuperBowlObjects);
+            
+            for (int i = 0; i <LosingestCoachList.Length; i++)
+            {
+                Console.WriteLine("Coaches with the most Losses: {0}", LosingestCoachList[i]);
+            }
+            Console.WriteLine("Coach with most wins: {0}", WinningestCoach);
+            Console.WriteLine("Team with the most wins: {0}", TeamWinStats);
+            Console.WriteLine("Team with the most losses: {0}", LoseTeamStats);
+            Console.WriteLine("Press enter to clear...");
+            Console.ReadLine();
+            Console.Clear();
+
+            int[] GreatestDif = GreatestPointDif(SuperBowlObjects);
+            for(int i = 0; i<GreatestDif.Length; i++)
+            {
+                Console.WriteLine("Game with greatest point difference is SuperBowl {0}", SuperBowlObjects[GreatestDif[i]].SB);
+                Console.WriteLine("The point difference was {0} points.", SuperBowlObjects[GreatestDif[i]].WinningPts - SuperBowlObjects[GreatestDif[i]].LosingPts);
+            }
+            Console.WriteLine("Press enter to clear...");
+            Console.ReadLine();
+            Console.Clear();
+
+            int Average = AverageAttendace(SuperBowlObjects);
+            Console.WriteLine("The average Super Bowl attendance is {0}", Average);
+            Console.WriteLine("Press enter to clear...");
+            Console.ReadLine();
+            Console.Clear();
+
 
 
 
@@ -355,23 +386,194 @@ namespace Project_2__SuperBowl
                 }
                 
             }return MVPData;
-            //End of SuperBowl MVP Method
-
-            
-            
-            
-            
-                
-                
-             
-                
-
-                
-            
-            
-
-              
+            //End of SuperBowl MVP Method   
         }
 
-    }
+
+        static string[] MostLossCoach(SuperBowl[] SuperBowlObjects)
+        {
+            string LosingestCoach = "";
+            IEnumerable<SuperBowl> SuperBowlQuery =
+                from superBowls in SuperBowlObjects
+                orderby superBowls.CoachLoser ascending
+                select superBowls;
+
+            string[] C = { };
+            foreach (SuperBowl superBowls in SuperBowlQuery)
+            {
+                string[] a = { superBowls.CoachLoser };
+                C = C.Concat(a).ToArray();
+            }
+            int lastgreatest = 0;
+            var g = C.GroupBy(i => i); // From Stackoverflow
+
+            string[] LosingestCoachList = { };
+            foreach (var grp in g)
+            {
+               // Console.WriteLine("{0} {1}", grp.Key, grp.Count());
+                int Losses = grp.Count();
+                if (Losses >= 4)
+                {
+                    LosingestCoach = grp.Key;
+                    string[] temp = { LosingestCoach };
+                    LosingestCoachList = LosingestCoachList.Concat(temp).ToArray();
+                    lastgreatest = grp.Count();
+                }
+            }
+                return LosingestCoachList;
+        }//End of MostLossCoach Method
+
+
+        static string MostWinsCoach(SuperBowl[] SuperBowlObjects)
+        {
+            string WinningestCoach = "";
+            IEnumerable<SuperBowl> SuperBowlQuery =
+                from superBowls in SuperBowlObjects
+                orderby superBowls.CoachWinner ascending
+                select superBowls;
+
+            string[] C = { };
+            foreach(SuperBowl superBowls in SuperBowlQuery)
+            {
+                string[] a = { superBowls.CoachWinner };
+                C = C.Concat(a).ToArray();
+            }
+            int lastgreatest = 0;
+            var g = C.GroupBy(i => i); // From Stackoverflow
+
+            foreach (var grp in g)
+            {
+                int wins = grp.Count();
+                if( wins >= lastgreatest)
+                {
+                    WinningestCoach = grp.Key;
+                    lastgreatest = grp.Count();
+                }
+
+            }
+                return WinningestCoach;
+            
+        }//End of MostWinsCoach Method
+
+        static string TeamMostWins(SuperBowl[] SuperBowlObjects)
+        {
+            string TeamWinStats = "";
+            string[] C = { };
+            IEnumerable<SuperBowl> SuperBowlQuery =
+                from superBowls in SuperBowlObjects
+                orderby superBowls.WinningTeam ascending
+                select superBowls;
+
+            
+            foreach (SuperBowl superBowls in SuperBowlQuery)
+            {
+               // Console.WriteLine(superBowls.WinningTeam);
+                string[] a = { superBowls.WinningTeam };
+                C = C.Concat(a).ToArray();
+            }
+            var g = C.GroupBy(i => i); // From Stackoverflow
+
+            int lastgreatest = 0;
+            foreach (var grp in g)
+            {
+                //Console.WriteLine("{0} {1}", grp.Key, grp.Count());
+                int wins = grp.Count();
+                if (wins > lastgreatest)
+                {
+                    TeamWinStats = grp.Key;
+                    lastgreatest = grp.Count();
+                }
+            }
+
+                return TeamWinStats;
+            //End of TeamMostWins Method
+        }
+        static string TeamMostLoss(SuperBowl[] SuperBowlObjects)
+        {
+            string LoseTeamStats = "";
+
+            string[] C = { };
+            IEnumerable<SuperBowl> SuperBowlQuery =
+                from superBowls in SuperBowlObjects
+                orderby superBowls.LosingTeam ascending
+                select superBowls;
+
+
+            foreach (SuperBowl superBowls in SuperBowlQuery)
+            {
+                // Console.WriteLine(superBowls.WinningTeam);
+                string[] a = { superBowls.LosingTeam };
+                C = C.Concat(a).ToArray();
+            }
+            var g = C.GroupBy(i => i); // From Stackoverflow
+
+            int lastgreatest = 0;
+            foreach (var grp in g)
+            {
+               // Console.WriteLine("{0} {1}", grp.Key, grp.Count());
+                int Losses = grp.Count();
+                if (Losses > lastgreatest)
+                {
+                    LoseTeamStats = grp.Key;
+                    lastgreatest = grp.Count();
+                }
+            }
+
+            return LoseTeamStats;
+        }
+        //End of TeamMostLoss Method
+
+        static int[] GreatestPointDif(SuperBowl[] SuperBowlObjects)
+        {
+            int[] GreatestDif = { };
+            int[] PointList = { };
+            for (int i = 0; i < 51; i++)
+            {
+                int PointDif;
+                PointDif = SuperBowlObjects[i].WinningPts - SuperBowlObjects[i].LosingPts;
+                int[] a = { PointDif};
+                PointList = PointList.Concat(a).ToArray();
+
+            }
+           
+            int lastgreatest = 0;
+            for (int x = 0; x < 51; x++)
+            {
+                if (PointList[x] > lastgreatest)
+                {
+                    lastgreatest = PointList[x];
+                }
+            }
+            int greatestDif = lastgreatest;
+            for (int y =0; y < 51; y++)
+            {
+                if(PointList[y] ==  greatestDif)
+                {
+                    int[] SBnumber = { y};
+                    GreatestDif = GreatestDif.Concat(SBnumber).ToArray();
+
+                }
+            }
+            
+            
+            return GreatestDif;
+
+        }//End of GreatestPointDif Method
+
+        static int AverageAttendace(SuperBowl[] SuperBowlObjects)
+        {
+            int TotalAttendaces = 0;
+            int Average;
+            for (int x = 0; x < SuperBowlObjects.Length; x++)
+            {
+                TotalAttendaces = TotalAttendaces + SuperBowlObjects[x].Attendance;
+            }
+
+            Average = TotalAttendaces / SuperBowlObjects.Length;
+            return Average;
+        }//End of AverageAttendace Method
+    } 
+    
+
+    
 }
