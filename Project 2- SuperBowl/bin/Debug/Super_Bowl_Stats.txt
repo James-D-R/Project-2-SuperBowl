@@ -1,0 +1,553 @@
+______________________________________________
+Super Bowl Winners Listed...
+1.Team name
+2.Year
+3.Winning QB
+4.Winning Coach
+5.MVP
+6.Winning vs Losing point difference
+
+
+1.Green Bay Packers
+2.'67
+3.Bart Starr
+4.Vince Lombardi
+5.Bart Starr
+6.25
+
+1.Green Bay Packers
+2.'68
+3.Bart Starr
+4.Vince Lombardi
+5.Bart Starr
+6.19
+
+1.New York Jets
+2.'69
+3.Joe Namath
+4.Weeb Ewbank
+5.Joe Namath
+6.9
+
+1.Kansas City Chiefs
+2.'70
+3.Len Dawson Mike Livingston
+4.Hank Stram
+5.Len Dawson
+6.16
+
+1.Baltimore Colts
+2.'71
+3.Earl Morrall Johnny Unitas
+4.Don McCafferty
+5.Chuck Howley
+6.3
+
+1.Dallas Cowboys
+2.'72
+3.Roger Staubach
+4.Tom Landry
+5.Roger Staubach
+6.21
+
+1.Miami Dolphins
+2.'73
+3.Bob Griese
+4.Don Shula
+5.Jake Scott
+6.7
+
+1.Miami Dolphins
+2.'74
+3.Bob Griese
+4.Don Shula
+5.Larry Csonka
+6.17
+
+1.Pittsburgh Steelers
+2.'75
+3.Terry Bradshaw
+4.Chuck Noll 
+5.Franco Harris
+6.10
+
+1.Pittsburgh Steelers
+2.'76
+3.Terry Bradshaw
+4.Chuck Noll 
+5.Lynn Swann
+6.4
+
+1.Oakland Raiders
+2.'77
+3.Kenny Stabler
+4.John Madden
+5.Fred Biletnikoff
+6.18
+
+1.Dallas Cowboys
+2.'78
+3.Roger Staubach
+4.Tom Landry
+5.Harvey Martin Randy White
+6.17
+
+1.Pittsburgh Steelers
+2.'79
+3.Terry Bradshaw
+4.Chuck Noll
+5.Terry Bradshaw
+6.4
+
+1.Pittsburgh Steelers
+2.'80
+3.Terry Bradshaw
+4.Chuck Noll
+5.Terry Bradshaw
+6.12
+
+1.Oakland Raiders
+2.'81
+3.Jim Plunkett
+4.Tom Flores
+5.Jim Plunkett
+6.17
+
+1.San Francisco 49ers
+2.'82
+3.Joe Montana
+4.Bill Walsh
+5.Joe Montana
+6.5
+
+1.Washington Redskins
+2.'83
+3.Joe Theismann
+4.Joe Gibbs
+5.John Riggins
+6.10
+
+1.Los Angeles Raiders
+2.'84
+3.Jim Plunkett
+4.Tom Flores
+5.Marcus Allen
+6.29
+
+1.San Francisco 49ers
+2.'85
+3.Joe Montano
+4.Bill Walsh
+5.Joe Montana
+6.22
+
+1.Chicago Bears
+2.'86
+3.Jim McMahon
+4.Mike Ditka
+5.Richard Dent
+6.36
+
+1.New York Giants
+2.'87
+3.Phil Simms
+4.Bill Parcells
+5.Phil Simms
+6.19
+
+1.Washington Redskins
+2.'88
+3.Doug Williams
+4.Joe Gibbs
+5.Doug Williams
+6.32
+
+1.San Francisco 49ers
+2.'89
+3.Joe Montana
+4.Bill Walsh
+5.Jerry Rice
+6.4
+
+1.San Francisco 49ers
+2.'90
+3.Joe Montana
+4.George Seifert
+5.Joe Montana
+6.45
+
+1.New York Giants
+2.'91
+3.Jeff Hostetler
+4.Bill Parcells
+5.Ottis Anderson
+6.1
+
+1.Washington Redskins
+2.'92
+3.Mark Rypien
+4.Joe Gibbs
+5.Mark Rypien
+6.13
+
+1.Dallas Cowboys
+2.'93
+3.Troy Aikman
+4.Jimmy Johnson
+5.Troy Aikman
+6.35
+
+1.Dallas Cowboys
+2.'94
+3.Troy Aikman
+4.Jimmy Johnson
+5.Emmitt Smith
+6.17
+
+1.San Francisco 49ers
+2.'95
+3.Steve Young
+4.George Seifert
+5.Steve Young
+6.23
+
+1.Dallas Cowboys
+2.'96
+3.Troy Aikman
+4.Barry Switzer
+5.Larry Brown
+6.10
+
+1.Green Bay Packers
+2.'97
+3.Brett Favre
+4.Mike Holmgren
+5.Desmond Howard
+6.14
+
+1.Denver Broncos
+2.'98
+3.John Elway
+4.Mike Shanahan
+5.Terrell Davis
+6.7
+
+1.Denver Broncos
+2.'99
+3.John Elway
+4.Mike Shanahan
+5.John Elway
+6.15
+
+1.St. Louis Rams
+2.'00
+3.Kurt Warner
+4.Dick Vermeil
+5.Kurt Warner
+6.7
+
+1.Baltimore Ravens
+2.'01
+3.Trent Dilfer
+4.Brian Billick
+5.Ray Lewis
+6.27
+
+1.New England Patriots
+2.'02
+3.Tom Brady
+4.Bill Belichick
+5.Tom Brady
+6.3
+
+1.Tampa Bay Buccaneers
+2.'03
+3.Brad Johnson
+4.Jon Gruden
+5.Dexter Jackson
+6.27
+
+1.New England Patriots
+2.'04
+3.Tom Brady
+4.Bill Belichick
+5.Tom Brady
+6.3
+
+1.New England Patriots
+2.'05
+3.Tom Brady
+4.Bill Belichick
+5.Deion Branch
+6.3
+
+1.Pittsburgh Steelers
+2.'06
+3.Ben Roethlisberger
+4.Bill Cowher
+5.Hines Ward
+6.11
+
+1.Indianapolis Colts
+2.'07
+3.Peyton Manning
+4.Tony Dungy
+5.Peyton Manning
+6.12
+
+1.New York Giants
+2.'08
+3.Eli Manning
+4.Tom Coughlin
+5.Eli Manning
+6.3
+
+1.Pittsburgh Steelers
+2.'09
+3.Ben Roethlisberger
+4.Mike Tomlin
+5.Santonio Holmes
+6.4
+
+1.New Orleans Saints
+2.'10
+3.Drew Brees
+4.Sean Payton
+5.Drew Brees
+6.14
+
+1.Green Bay Packers
+2.'11
+3.Aaron Rodgers
+4.Mike McCarthy
+5.Aaron Rodgers
+6.6
+
+1.New York Giants
+2.'12
+3.Eli Manning
+4.Tom Coughlin
+5.Eli Manning
+6.4
+
+1.Baltimore Ravens
+2.'13
+3.Joe Flacco
+4.John Harbaugh
+5.Joe Flacco
+6.3
+
+1.Seattle Seahawks
+2.'14
+3.Russell Wilson
+4.Pete Carroll
+5.Malcolm Smith
+6.35
+
+1.New England Patriots
+2.'15
+3.Tom Brady
+4.Bill Belichick
+5.Tom Brady
+6.4
+
+1.Denver Broncos
+2.'16
+3.Peyton Manning
+4.Gary Kubiak
+5.Von Miller
+6.14
+
+1.New England Patriots
+2.'17
+3.Tom Brady
+4.Bill Belichick
+5.Tom Brady
+6.6
+
+______________________________________________
+Top 5 attended Super Bowls...
+1.Attendance
+2.Year
+3.Winning Team
+4.Losing Team
+5.City
+6.State
+7.Stadium
+
+1.103985
+2.'80
+3.Pittsburgh Steelers
+4.Los Angeles Rams
+5.Pasadena
+6.California
+7.Rose Bowl
+
+1.103667
+2.'83
+3.Washington Redskins
+4.Miami Dolphins
+5.Pasadena
+6.California
+7.Rose Bowl
+
+1.103438
+2.'77
+3.Oakland Raiders
+4.Minnesota Vikings
+5.Pasadena
+6.California
+7.Rose Bowl
+
+1.103219
+2.'11
+3.Green Bay Packers
+4.Pittsburgh Steelers
+5.Arlington
+6.Texas
+7.Cowboys Stadium
+
+1.101063
+2.'87
+3.New York Giants
+4.Denver Broncos
+5.Pasadena
+6.California
+7.Rose Bowl
+
+________________________________________________
+State that has hosted the most Super Bowls.
+1.City
+2.State
+3.Stadium
+
+1.Miami
+2.Florida
+3.Orange Bowl
+
+1.Miami
+2.Florida
+3.Orange Bowl
+
+1.Miami
+2.Florida
+3.Orange Bowl
+
+1.Miami
+2.Florida
+3.Orange Bowl
+
+1.Miami
+2.Florida
+3.Orange Bowl
+
+1.Tampa
+2.Florida
+3.Tampa Stadium
+
+1.Miami Gardens
+2.Florida
+3.Joe Robbie Stadium
+
+1.Tampa
+2.Florida
+3.Tampa Stadium
+
+1.Miami Gardens
+2.Florida
+3.Joe Robbie Stadium
+
+1.Miami Gardens
+2.Florida
+3.Pro Player Stadium
+
+1.Tampa
+2.Florida
+3.Raymond James Stadium
+
+1.Jacksonville
+2.Florida
+3.Alltel Stadium
+
+1.Miami Gardens
+2.Florida
+3.Dolphin Stadium
+
+1.Tampa
+2.Florida
+3.Raymond James Stadium
+
+1.Miami Gardens
+2.Florida
+3.Sun Life Stadium
+
+__________________________________________________
+Players who won MVP at least twice.
+1.Name of MVP
+2.Winning Team
+3.Losing Team
+
+1.Eli Manning
+2.New York Giants
+3.New England Patriots
+
+1.Eli Manning
+2.New York Giants
+3.New England Patriots
+
+1.Joe Montana
+2.San Francisco 49ers
+3.Cincinnati Bengals
+
+1.Joe Montana
+2.San Francisco 49ers
+3.Miami Dolphins
+
+1.Joe Montana
+2.San Francisco 49ers
+3.Denver Broncos
+
+1.Terry Bradshaw
+2.Pittsburgh Steelers
+3.Dallas Cowboys
+
+1.Terry Bradshaw
+2.Pittsburgh Steelers
+3.Los Angeles Rams
+
+1.Tom Brady
+2.New England Patriots
+3.St. Louis Rams
+
+1.Tom Brady
+2.New England Patriots
+3.Carolina Panthers
+
+1.Tom Brady
+2.New England Patriots
+3.Seattle Seahawks
+
+1.Tom Brady
+2.New England Patriots
+3.Atlanta Falcons
+
+__________________________________________________
+Miscellaneous Stats
+
+
+Coaches with the most Super Bowl losses:
+Bud Grant
+Dan Reeves
+Don Shula
+Marv Levy
+
+Coach with most Super Bowl wins: Bill Belichick
+
+Team with the most Super Bowl wins: Pittsburgh Steelers
+
+Team with the most Super Bowl losses: Denver Broncos
+
+Game with greatest point difference is SuperBowl XXIV
+The point difference was 45 points.
+
+The average Super Bowl attendance is 77648

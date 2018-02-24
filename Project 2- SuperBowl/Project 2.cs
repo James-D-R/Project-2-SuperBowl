@@ -62,183 +62,256 @@ namespace Project_2__SuperBowl
 
         static void Main(string[] args)
         {
-            StreamReader reader = OpenFile();
-
-            string[] ListDate = { };
-            string[] ListSB = { };
-            int[] ListAttendance = { };
-            string[] ListQBWinner = { };
-            string[] ListCoachWinner = { };
-            string[] ListTeamWinner = { };
-            int[] ListWinningPts = { };
-            string[] ListQBLoser = { };
-            string[] ListCoachLoser = { };
-            string[] ListTeamLoser = { };
-            int[] ListLosingPts = { };
-            string[] ListMVP = { };
-            string[] ListStadium = { };
-            string[] ListCity = { };
-            string[] ListState = { };
-
-            string[] row;
-            reader.ReadLine();
-            for (var z = 0; z < 51; z++)
-            {
-                char delimiter = ',';
-                row = reader.ReadLine().Split(delimiter);
-
-                string[] a = { row[0] };
-                ListDate = ListDate.Concat(a).ToArray();
-
-                string[] b = { row[1] };
-                ListSB = ListSB.Concat(b).ToArray();
-
-                int[] c = { Int32.Parse(row[2]) };
-                ListAttendance = ListAttendance.Concat(c).ToArray();
-
-                string[] d = { row[3] };
-                ListQBWinner = ListQBWinner.Concat(d).ToArray();
-
-                string[] e = { row[4] };
-                ListCoachWinner = ListCoachWinner.Concat(e).ToArray();
-
-                string[] f = { row[5] };
-                ListTeamWinner = ListTeamWinner.Concat(f).ToArray();
-
-                int[] g = { Int32.Parse(row[6]) };
-                ListWinningPts = ListWinningPts.Concat(g).ToArray();
-
-                string[] h = { row[7] };
-                ListQBLoser = ListQBLoser.Concat(h).ToArray();
-
-                string[] i = { row[8] };
-                ListCoachLoser = ListCoachLoser.Concat(i).ToArray();
-
-                string[] j = { row[9] };
-                ListTeamLoser = ListTeamLoser.Concat(j).ToArray();
-
-                int[] k = { Int32.Parse(row[10]) };
-                ListLosingPts = ListLosingPts.Concat(k).ToArray();
-
-                string[] l = { row[11] };
-                ListMVP = ListMVP.Concat(l).ToArray();
-
-                string[] m = { row[12] };
-                ListStadium = ListStadium.Concat(m).ToArray();
-
-                string[] n = { row[13] };
-                ListCity = ListCity.Concat(n).ToArray();
-
-                string[] o = { row[14] };
-                ListState = ListState.Concat(o).ToArray();
-            }
-
-            SuperBowl[] SuperBowlObjects = CreateObjects(ListDate, ListSB, ListAttendance, ListQBWinner, ListCoachWinner, ListTeamWinner, ListWinningPts, ListQBLoser,
-                            ListCoachLoser, ListTeamLoser, ListLosingPts, ListMVP, ListStadium, ListCity, ListState);
-
-            string[,] WinningStats = SuperBowlWinners(SuperBowlObjects); // Returns muli-dimensional array of SuperBowl winner's stats
             
-            for (var i = 0; i < 51; i++)
+            string Filepath = GetFilePath();
+            bool value = TestFilePath(Filepath);
+
+
+            if(value == true)
             {
-                Console.WriteLine("1.{0}", WinningStats[i, 0]);
-                Console.WriteLine("2.{0}", WinningStats[i, 1]);
-                Console.WriteLine("3.{0}", WinningStats[i, 2]);
-                Console.WriteLine("4.{0}", WinningStats[i, 3]);
-                Console.WriteLine("5.{0}", WinningStats[i, 4]);
-                Console.WriteLine("6.{0}", WinningStats[i, 5]);
-                Console.WriteLine();
+                StreamReader reader = OpenFile(Filepath);
+
+                string[] ListDate = { };
+                string[] ListSB = { };
+                int[] ListAttendance = { };
+                string[] ListQBWinner = { };
+                string[] ListCoachWinner = { };
+                string[] ListTeamWinner = { };
+                int[] ListWinningPts = { };
+                string[] ListQBLoser = { };
+                string[] ListCoachLoser = { };
+                string[] ListTeamLoser = { };
+                int[] ListLosingPts = { };
+                string[] ListMVP = { };
+                string[] ListStadium = { };
+                string[] ListCity = { };
+                string[] ListState = { };
+
+                string[] row;
+                reader.ReadLine();
+                for (var z = 0; z < 51; z++)
+                {
+                    char delimiter = ',';
+                    row = reader.ReadLine().Split(delimiter);
+
+                    string[] a = { row[0] };
+                    ListDate = ListDate.Concat(a).ToArray();
+
+                    string[] b = { row[1] };
+                    ListSB = ListSB.Concat(b).ToArray();
+
+                    int[] c = { Int32.Parse(row[2]) };
+                    ListAttendance = ListAttendance.Concat(c).ToArray();
+
+                    string[] d = { row[3] };
+                    ListQBWinner = ListQBWinner.Concat(d).ToArray();
+
+                    string[] e = { row[4] };
+                    ListCoachWinner = ListCoachWinner.Concat(e).ToArray();
+
+                    string[] f = { row[5] };
+                    ListTeamWinner = ListTeamWinner.Concat(f).ToArray();
+
+                    int[] g = { Int32.Parse(row[6]) };
+                    ListWinningPts = ListWinningPts.Concat(g).ToArray();
+
+                    string[] h = { row[7] };
+                    ListQBLoser = ListQBLoser.Concat(h).ToArray();
+
+                    string[] i = { row[8] };
+                    ListCoachLoser = ListCoachLoser.Concat(i).ToArray();
+
+                    string[] j = { row[9] };
+                    ListTeamLoser = ListTeamLoser.Concat(j).ToArray();
+
+                    int[] k = { Int32.Parse(row[10]) };
+                    ListLosingPts = ListLosingPts.Concat(k).ToArray();
+
+                    string[] l = { row[11] };
+                    ListMVP = ListMVP.Concat(l).ToArray();
+
+                    string[] m = { row[12] };
+                    ListStadium = ListStadium.Concat(m).ToArray();
+
+                    string[] n = { row[13] };
+                    ListCity = ListCity.Concat(n).ToArray();
+
+                    string[] o = { row[14] };
+                    ListState = ListState.Concat(o).ToArray();
+                }
+                reader.Close();
+
+                SuperBowl[] SuperBowlObjects = CreateObjects(ListDate, ListSB, ListAttendance, ListQBWinner, ListCoachWinner, ListTeamWinner, ListWinningPts, ListQBLoser,
+                                ListCoachLoser, ListTeamLoser, ListLosingPts, ListMVP, ListStadium, ListCity, ListState);
+
+                string[,] WinningStats = SuperBowlWinners(SuperBowlObjects); // Returns muli-dimensional array of SuperBowl winner's stats
+
+                string[,] AttendanceStats = SuperBowlAttendance(SuperBowlObjects);
+
+                string[,] StateStats = SuperBowlStates(SuperBowlObjects);
+
+                string[,] MVPData = SuperBowlMVP(SuperBowlObjects);
+
+                string[] LosingestCoachList = MostLossCoach(SuperBowlObjects);
+                string WinningestCoach = MostWinsCoach(SuperBowlObjects);
+                string TeamWinStats = TeamMostWins(SuperBowlObjects);
+                string LoseTeamStats = TeamMostLoss(SuperBowlObjects);
+
+                int[] GreatestDif = GreatestPointDif(SuperBowlObjects);
+
+                int Average = AverageAttendace(SuperBowlObjects);
+
+
+                WriteFile(WinningStats, AttendanceStats, StateStats, MVPData, LosingestCoachList, WinningestCoach, TeamWinStats, LoseTeamStats, GreatestDif, Average, SuperBowlObjects, Filepath);
 
             }
-            Console.WriteLine("Press enter to clear...");
-            Console.ReadLine();
-            Console.Clear();
-
-            string[,] AttendanceStats = SuperBowlAttendance(SuperBowlObjects);
-
-            for (var y = 0; y < 5; y++)
-            {
-                Console.WriteLine("1.{0}", AttendanceStats[y, 0]);
-                Console.WriteLine("2.{0}", AttendanceStats[y, 1]);
-                Console.WriteLine("3.{0}", AttendanceStats[y, 2]);
-                Console.WriteLine("4.{0}", AttendanceStats[y, 3]);
-                Console.WriteLine("5.{0}", AttendanceStats[y, 4]);
-                Console.WriteLine("6.{0}", AttendanceStats[y, 5]);
-                Console.WriteLine("7.{0}", AttendanceStats[y, 6]);
-                Console.WriteLine();
-            }
-            Console.WriteLine("Press enter to clear...");
-            Console.ReadLine();
-            Console.Clear();
-
-            string[,] StateStats = SuperBowlStates(SuperBowlObjects);
-
-            for (int z= 0; z < 15; z++)
-            {
-                Console.WriteLine("1.{0}", StateStats[z, 0]);
-                Console.WriteLine("2.{0}", StateStats[z,1]);
-                Console.WriteLine("3.{0}", StateStats[z, 2]);
-                Console.WriteLine();
-            }
-            Console.WriteLine("Press enter to clear...");
-            Console.ReadLine();
-            Console.Clear();
-
-            string[,] MVPData = SuperBowlMVP(SuperBowlObjects);
-            for (int z = 0; z < 11; z++)
-            {
-                Console.WriteLine("1.{0}", MVPData[z, 0]);
-                Console.WriteLine("2.{0}", MVPData[z, 1]);
-                Console.WriteLine("3.{0}", MVPData[z, 2]);
-                Console.WriteLine();
-            }
-
-            Console.WriteLine("Press enter to clear...");
-            Console.ReadLine();
-            Console.Clear();
-
-            string[] LosingestCoachList = MostLossCoach(SuperBowlObjects);
-            string WinningestCoach = MostWinsCoach(SuperBowlObjects);
-            string TeamWinStats = TeamMostWins(SuperBowlObjects);
-            string LoseTeamStats = TeamMostLoss(SuperBowlObjects);
-            
-            for (int i = 0; i <LosingestCoachList.Length; i++)
-            {
-                Console.WriteLine("Coaches with the most Losses: {0}", LosingestCoachList[i]);
-            }
-            Console.WriteLine("Coach with most wins: {0}", WinningestCoach);
-            Console.WriteLine("Team with the most wins: {0}", TeamWinStats);
-            Console.WriteLine("Team with the most losses: {0}", LoseTeamStats);
-            Console.WriteLine("Press enter to clear...");
-            Console.ReadLine();
-            Console.Clear();
-
-            int[] GreatestDif = GreatestPointDif(SuperBowlObjects);
-            for(int i = 0; i<GreatestDif.Length; i++)
-            {
-                Console.WriteLine("Game with greatest point difference is SuperBowl {0}", SuperBowlObjects[GreatestDif[i]].SB);
-                Console.WriteLine("The point difference was {0} points.", SuperBowlObjects[GreatestDif[i]].WinningPts - SuperBowlObjects[GreatestDif[i]].LosingPts);
-            }
-            Console.WriteLine("Press enter to clear...");
-            Console.ReadLine();
-            Console.Clear();
-
-            int Average = AverageAttendace(SuperBowlObjects);
-            Console.WriteLine("The average Super Bowl attendance is {0}", Average);
-            Console.WriteLine("Press enter to clear...");
-            Console.ReadLine();
-            Console.Clear();
-
 
 
 
         }// End of Main Method
 
-        static StreamReader OpenFile()
+        static bool TestFilePath(string Filepath)
         {
-            FileStream file = new FileStream("Super_Bowl_Project.csv", FileMode.Open, FileAccess.Read);
-            StreamReader reader = new StreamReader(file);
+
+            bool value = true;
+                try
+                {
+                    Filepath = Filepath + "Super_Bowl_Project.csv";
+                    FileStream testfile = new FileStream(@Filepath, FileMode.Open, FileAccess.Read);
+                    StreamReader testread = new StreamReader(testfile);
+                    testread.Close();
+                    testfile.Close();
+                }
+                catch (Exception i)
+                {
+                Console.WriteLine(i.Message);
+                    Console.WriteLine("Unable to find file path. Please try entering the path again.");
+                    Console.ReadLine();
+                    value = false;
+                }
+            return value;
+            
+            //End of TestFilePath Method
+        }
+
+        static StreamReader OpenFile(string Filepath)
+        {
+            Filepath = Filepath + "Super_Bowl_Project.csv";
+            FileStream file;
+            StreamReader reader;
+            file = new FileStream(@Filepath, FileMode.Open, FileAccess.Read);
+            reader = new StreamReader(file);
             return reader;
+          
         }// End of OpenFile Method
+
+        static void WriteFile(string[,] WinningStats, string[,] AttendanceStats, string[,] StateStats, string[,] MVPData, 
+                                      string[] LosingestCoachList, string WinningestCoach, string TeamWinStats, string LoseTeamStats,
+                                      int[] GreatestDif, int Average, SuperBowl[] SuperBowlObjects,string Filepath)
+        {
+            Filepath = Filepath + "Super_Bowl_Stats.txt";
+            FileStream newFile = new FileStream(Filepath, FileMode.Create, FileAccess.Write);
+            StreamWriter writer = new StreamWriter(newFile);
+
+            writer.WriteLine("______________________________________________");
+            writer.WriteLine("Super Bowl Winners Listed..."); //Part 1
+            writer.WriteLine("1.Team name");
+            writer.WriteLine("2.Year");
+            writer.WriteLine("3.Winning QB");
+            writer.WriteLine("4.Winning Coach");
+            writer.WriteLine("5.MVP");
+            writer.WriteLine("6.Winning vs Losing point difference");
+            writer.WriteLine("\n");
+            for (var i = 0; i < 51; i++)
+            {
+                writer.WriteLine("1.{0}", WinningStats[i, 0]);
+                writer.WriteLine("2.{0}", WinningStats[i, 1]);
+                writer.WriteLine("3.{0}", WinningStats[i, 2]);
+                writer.WriteLine("4.{0}", WinningStats[i, 3]);
+                writer.WriteLine("5.{0}", WinningStats[i, 4]);
+                writer.WriteLine("6.{0}", WinningStats[i, 5]);
+                writer.WriteLine();
+
+            }
+            writer.WriteLine("______________________________________________");
+            writer.WriteLine("Top 5 attended Super Bowls..."); //Part 2
+            writer.WriteLine("1.Attendance");
+            writer.WriteLine("2.Year");
+            writer.WriteLine("3.Winning Team");
+            writer.WriteLine("4.Losing Team");
+            writer.WriteLine("5.City");
+            writer.WriteLine("6.State");
+            writer.WriteLine("7.Stadium");
+            writer.WriteLine("");
+            for (var y = 0; y < 5; y++)
+            {
+                writer.WriteLine("1.{0}", AttendanceStats[y, 0]);
+                writer.WriteLine("2.{0}", AttendanceStats[y, 1]);
+                writer.WriteLine("3.{0}", AttendanceStats[y, 2]);
+                writer.WriteLine("4.{0}", AttendanceStats[y, 3]);
+                writer.WriteLine("5.{0}", AttendanceStats[y, 4]);
+                writer.WriteLine("6.{0}", AttendanceStats[y, 5]);
+                writer.WriteLine("7.{0}", AttendanceStats[y, 6]);
+                writer.WriteLine("");
+            }
+            writer.WriteLine("________________________________________________");
+            writer.WriteLine("State that has hosted the most Super Bowls.");//Part 3
+            writer.WriteLine("1.City");
+            writer.WriteLine("2.State");
+            writer.WriteLine("3.Stadium");
+            writer.WriteLine("");
+            for (int z = 0; z < 15; z++)
+            {
+                writer.WriteLine("1.{0}", StateStats[z, 0]);
+                writer.WriteLine("2.{0}", StateStats[z, 1]);
+                writer.WriteLine("3.{0}", StateStats[z, 2]);
+                writer.WriteLine();
+            }
+
+            writer.WriteLine("__________________________________________________");
+            writer.WriteLine("Players who won MVP at least twice.");//Part 4
+            writer.WriteLine("1.Name of MVP");
+            writer.WriteLine("2.Winning Team");
+            writer.WriteLine("3.Losing Team");
+            writer.WriteLine("");
+            for (int z = 0; z < 11; z++)
+            {
+                writer.WriteLine("1.{0}", MVPData[z, 0]);
+                writer.WriteLine("2.{0}", MVPData[z, 1]);
+                writer.WriteLine("3.{0}", MVPData[z, 2]);
+                writer.WriteLine();
+            }
+
+            writer.WriteLine("__________________________________________________");
+            writer.WriteLine("Miscellaneous Stats"); //Part 5
+            writer.WriteLine("");
+            writer.WriteLine("");
+            writer.WriteLine("Coaches with the most Super Bowl losses:");
+            for (int i = 0; i < LosingestCoachList.Length; i++)
+            {
+                writer.WriteLine(LosingestCoachList[i]);
+            }
+            writer.WriteLine("");
+            writer.WriteLine("Coach with most Super Bowl wins: {0}", WinningestCoach);
+            writer.WriteLine("");
+            writer.WriteLine("Team with the most Super Bowl wins: {0}", TeamWinStats);
+            writer.WriteLine("");
+            writer.WriteLine("Team with the most Super Bowl losses: {0}", LoseTeamStats);
+            writer.WriteLine("");
+            for (int i = 0; i < GreatestDif.Length; i++)
+            {
+                writer.WriteLine("Game with greatest point difference is SuperBowl {0}", SuperBowlObjects[GreatestDif[i]].SB);
+                writer.WriteLine("The point difference was {0} points.", SuperBowlObjects[GreatestDif[i]].WinningPts - SuperBowlObjects[GreatestDif[i]].LosingPts);
+            }
+            writer.WriteLine("");
+            writer.WriteLine("The average Super Bowl attendance is {0}", Average);
+
+            writer.Close();
+            newFile.Close();
+
+            return;
+
+        }//End of WriteFile Method
 
         static SuperBowl[] CreateObjects(string[] ListDate, string[] ListSB, int[] ListAttendance, string[] ListQBWinner,
                                          string[] ListCoachWinner, string[] ListTeamWinner, int[] ListWinningPts, string[] ListQBLoser,
@@ -254,6 +327,18 @@ namespace Project_2__SuperBowl
             };
             return SuperBowlObjects;
         }// End of CreateObjects Method
+
+        static string GetFilePath()
+        {
+            string Filepath;
+            Console.WriteLine("Please enter the Filepath where the file 'Super_Bowl_Project.csv' will be read from.\nThe new file will also be writen here.");
+            Console.WriteLine("*Do not include 'Super_Bowl_Project.csv' at the end of your entered filepath");
+            Console.WriteLine("Example: C:/Users/remjamd/Documents/");
+            Filepath = Console.ReadLine();
+            
+            return Filepath;
+
+        }//End of GetFilePath Method
 
         static string[,] SuperBowlWinners(SuperBowl[] SuperBowlObjects)
         {
